@@ -283,7 +283,24 @@ export default {
           gain: this.curGain,
           tension: 1
         };
-        if(this.curGain != 0){
+        let exist = false;
+        for(let i = 0; i < this.arrows.length; i++){
+          console.log(this.arrows[i].idFrom + ' ' +this.arrows[i].idTo)
+          if(this.arrows[i].idFrom == arrow.idFrom && this.arrows[i].idTo == arrow.idTo){
+            if(arrow.gain == 0){
+              this.arrows = this.arrows.filter(arrow => !(this.arrows[i].idFrom == arrow.idFrom && this.arrows[i].idTo == arrow.idTo))
+              this.gains = this.gains.filter(gain => !(gain.id == arrow.idFrom + ' ' + arrow.idTo));
+            }
+            else{
+              this.arrows[i].gain = arrow.gain;
+              this.gains[i].text = arrow.gain;
+            }
+            exist= true;
+            console.log("yee")
+            break;
+          }
+        }
+        if(this.curGain != 0 && !exist){
           let gpx = points[0];
           let gpy = points[1];
           if(points.length == 4){
@@ -307,7 +324,7 @@ export default {
           this.connections.push({shape1: this.shape1, shape2: this.shape2});
           this.arrows.push(arrow);
         }
-        else{
+        else if(this.curGain == 0 && !exist){
           alert("Gain Cannot be zero!");
         }
         this.shape1.fill = 'black'
