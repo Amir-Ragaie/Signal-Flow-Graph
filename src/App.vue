@@ -4,11 +4,15 @@
       <ul>
         <li class="options">
           <img src="./assets/product.png" class="productimage">
-        <input type="number" placeholder="Products Num" class="productno" v-model="productNum">
+        <input type="number" placeholder="Products Num" class="productno" v-model="nodes">
         </li>
         <li class="options" @click="clear()">
             <img src="./assets/clear.png" class="image">
             <p>Clear</p>
+        </li>
+        <li class="options" @click="start()">
+            <img src="./assets/start.png" class="image">
+            <p>Start</p>
         </li>
       </ul>  
     </div>
@@ -64,7 +68,7 @@ export default {
       connections: [],
       arrows: [],
       qNames: [],
-      productNum: 0,
+      nodes: 0,
       gains: [],
       curGain: 0,
       busy : true
@@ -88,6 +92,23 @@ export default {
     
   },
   methods: {
+    start(){
+      const rows = this.queues.length;
+      const cols = rows;
+      let graph = new Array(rows);
+      for (let i = 0; i < rows; i++) {
+        graph[i] = new Array(cols);
+        for(let j = 0; j < cols; j++){
+          graph[i][j] = 0;
+        }
+      }
+      for(let i = 0; i < this.arrows.length; i++){
+        let x = this.arrows[i].idFrom;
+        let y = this.arrows[i].idTo;
+        graph[x][y] = this.arrows[i].gain;
+      }
+      console.log(graph);
+    },
     updateQueue(e){
       // console.log(e.target.id())
       let id = e.target.id();
@@ -174,6 +195,11 @@ export default {
       const parentRect = this.$refs.parent.getBoundingClientRect();
       let id = -1
       if(this.current == 'queue'){
+        if(this.nodes <= 0){
+          alert("You have reached Maximum available nodes");
+          return;
+        }
+        this.nodes--;
         const queue = {
           id: this.queues.length,
           x: (e.clientX - parentRect.left ),
@@ -281,13 +307,14 @@ export default {
           this.connections.push({shape1: this.shape1, shape2: this.shape2});
           this.arrows.push(arrow);
         }
+        else{
+          alert("Gain Cannot be zero!");
+        }
         this.shape1.fill = 'black'
         this.shape2.fill = 'black'
         this.shape1 = null;
         this.shape2 = null;
         document.querySelector(".queue").classList.remove("active");
-        // this.connection = false;
-        // document.querySelector(".connection").classList.remove("active");
       }
     },
     enableConnection(connection){
