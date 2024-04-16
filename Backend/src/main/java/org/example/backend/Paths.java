@@ -19,12 +19,12 @@ public class Paths {
         this.gainOfForwardPaths = gainOfForwardPaths;
     }
 
-    public void findForwardPaths(int[][] graph) {
+    public void findForwardPaths(double[][] graph) {
         //List<List<Integer>> allPaths = new ArrayList<>();
         dfs(0, new ArrayList<>(), graph, forwardPaths);
     }
 
-    private static void dfs(int node, List<Integer> path, int[][] graph, List<List<Integer>> allPaths) {
+    private static void dfs(int node, List<Integer> path, double[][] graph, List<List<Integer>> allPaths) {
         if (node == graph.length - 1) {
             path.add(node);
             allPaths.add(new ArrayList<>(path));
@@ -32,15 +32,15 @@ public class Paths {
             return;
         }
         path.add(node);
-        for (int nextNode = 0; nextNode < graph.length; nextNode++) {
-            if (graph[node][nextNode] >0 ) {
+        for (int nextNode = node; nextNode < graph.length; nextNode++) {
+            if (graph[node][nextNode] !=0 ) {
                 dfs(nextNode, path, graph, allPaths);
             }
         }
         path.remove(path.size() - 1);
     }
 
-    public void findGainOfForwardPaths(int[][] graph, List<List<Integer>> forwardPaths) {
+    public void findGainOfForwardPaths(double[][] graph, List<List<Integer>> forwardPaths) {
         for (List<Integer> path : forwardPaths) {
             int gain = 1;
             for (int i = 0; i < path.size() - 1; i++) {
