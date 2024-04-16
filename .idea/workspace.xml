@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f696322e-46c7-4155-ace1-c8e8763e3fdc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/org/example/backend/BackendApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/org/example/backend/BackendApplicationTests.java" beforeDir="false" />
-    </list>
+    <list default="true" id="f696322e-46c7-4155-ace1-c8e8763e3fdc" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,6 +57,7 @@
       <workItem from="1713271898063" duration="25000" />
       <workItem from="1713271934563" duration="530000" />
       <workItem from="1713272512816" duration="89000" />
+      <workItem from="1713272746684" duration="25000" />
     </task>
     <servers />
   </component>
