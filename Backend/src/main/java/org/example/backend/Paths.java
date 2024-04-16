@@ -32,7 +32,7 @@ public class Paths {
             return;
         }
         path.add(node);
-        for (int nextNode = 0; nextNode < graph.length; nextNode++) {
+        for (int nextNode = node; nextNode < graph.length; nextNode++) {
             if (graph[node][nextNode] >0 ) {
                 dfs(nextNode, path, graph, allPaths);
             }
