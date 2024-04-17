@@ -10,6 +10,7 @@ public class Controller {
 //    @Autowired
     @PostMapping("/solver")
     public Service solvingSFG(@RequestBody double[][]graph){
+        System.out.println(graph);
         Service service = new Service(graph);
         return service;
     }
