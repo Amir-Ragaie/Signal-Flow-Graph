@@ -49,6 +49,10 @@ public class Paths {
             gainOfForwardPaths.add(gain);
         }
     }
+    public void handlePaths(double[][]graph){
+        this.findForwardPaths(graph);
+        this.findGainOfForwardPaths(graph,this.getForwardPaths());
+    }
 
 //    public static void main(String[] args) {
 //        int[][] graphMatrix = {
