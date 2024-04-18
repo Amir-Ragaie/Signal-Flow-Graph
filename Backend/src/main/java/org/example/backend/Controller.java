@@ -10,7 +10,7 @@ import java.util.List;
 @RequestMapping("/")
 @CrossOrigin(origins = "*")
 public class Controller {
-//    @Autowired
+    //    @Autowired
     @PostMapping("/solver")
     public Service solvingSFG(@RequestBody String str){
         System.out.println(str);
@@ -40,6 +40,8 @@ public class Controller {
         double[][] graph = new double[list.size()][];
         for (int i = 0; i < list.size(); i++) {
             graph[i] = list.get(i);
+//            for(double a:graph[i]) System.out.print(a + " ");
+//            System.out.println("");
         }
         for (double[] row : graph) {
             for (double element : row) {
@@ -52,14 +54,12 @@ public class Controller {
         paths.findGainOfForwardPaths(graph,paths.getForwardPaths());
         Loops loops = new Loops(graph);
         Deltas deltas = new Deltas(loops,paths.getForwardPaths(),graph);
-        Service service = new Service(paths.getForwardPaths(),paths.getGainOfForwardPaths(),loops.getLoopsInGraph(), deltas.getDelta(),deltas.getDeltas());
-//        Service service = new Service(graph);
-//        String result = "The forward paths are: " + service.paths.getForwardPaths().toString() + "\n" +
-//                "The loops are: " + service.loops.getLoopsInGraph().toString() + "\n" +
-//                "The 2 Non-touching loops are "+ service.loops.getNonTouchingLoops().toString()+"\n"+
-//                "The delta is: " + Double.toString(service.deltas.getDelta()) + "\n" +
-//                "The deltas are: " + service.deltas.getDeltas().toString();
-//        System.out.println(result);
+        List<List<Integer>> loopsInGraph = new ArrayList<>();
+        for(SingleLoop l:loops.getLoopsInGraph()){
+            loopsInGraph.add(l.getLoopPath());
+        }
+        Service service = new Service(paths.getForwardPaths(),paths.getGainOfForwardPaths(),loopsInGraph, deltas.getDelta(),deltas.getDeltas(), loops.getNonTouchingLoops());
+        service.computeTF();
         return service;
     }
 }
