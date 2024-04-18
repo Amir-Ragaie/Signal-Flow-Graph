@@ -149,7 +149,7 @@ export default {
         // body: JSON.stringify({graph: graph})
         body: JSON.stringify(graph)
       }).then(response =>{ 
-        return response.text();
+        return response.json();
       }).then(data => {
         console.log(data);
       });
