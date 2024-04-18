@@ -9,23 +9,26 @@
         <ul>
           <p>Forward Paths</p>
           <li v-for="path in fPaths" :key="path">
-            •
-            <span v-for="index in path.length" :key="index">
-              {{path[index]}}
-                <span v-if="index < path.length-1"> -> </span>
-              </span>
+            • {{ path }}
           </li>
         </ul>
         <ul>
           <p>Individual Loops</p>
           <li v-for="path in loops" :key="path">
-            •
-            <span v-for="index in path.length" :key="index">
-              {{path[index]}}
-                <span v-if="index < path.length-1"> -> </span>
-              </span>
+            • {{ path }}
           </li>
         </ul>
+        <ul>
+          <p>Non Touching Loops</p>
+          <li v-for="path in nonTLoops" :key="path">
+            • {{ path }}
+          </li>
+        </ul>
+        <ul>
+          <p>Deltas</p>
+          {{ deltas }}
+        </ul>
+        
       </div>
     </div>
     <div class="navBar">
@@ -102,6 +105,8 @@ export default {
       busy : true,
       fPaths: [],
       loops: [],
+      nonTLoops: [],
+      deltas: [],
       TF: 0,
     }
   },
@@ -149,8 +154,14 @@ export default {
         // body: JSON.stringify({graph: graph})
         body: JSON.stringify(graph)
       }).then(response =>{ 
+        console.log(response)
         return response.json();
       }).then(data => {
+        this.fPaths = data.forwardPaths;
+        this.loops = data.loopsInGraph;
+        this.nonTLoops = data.NonTouchingLoops;
+        this.deltas = data.deltas;
+        this.TF = data.transferFunction;
         console.log(data);
       });
       document.querySelector(".output").style.visibility = 'visible';
