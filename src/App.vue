@@ -1,5 +1,36 @@
 <template>
   <div id="app" class="app">
+    <div class="output">
+      <header @click="closeOutput()">X</header>
+      <div class="container">
+        <ul>
+          <p>Transfer Function is {{TF}}</p>
+        </ul>
+        <ul>
+          <p>Forward Paths</p>
+          <li v-for="path in fPaths" :key="path">
+            • {{ path }}
+          </li>
+        </ul>
+        <ul>
+          <p>Individual Loops</p>
+          <li v-for="path in loops" :key="path">
+            • {{ path }}
+          </li>
+        </ul>
+        <ul>
+          <p>Non Touching Loops</p>
+          <li v-for="path in nonTLoops" :key="path">
+            • {{ path }}
+          </li>
+        </ul>
+        <ul>
+          <p>Deltas</p>
+          {{ deltas }}
+        </ul>
+        
+      </div>
+    </div>
     <div class="navBar">
       <ul>
         <li class="options">
@@ -71,7 +102,12 @@ export default {
       nodes: 0,
       gains: [],
       curGain: 0,
-      busy : true
+      busy : true,
+      fPaths: [],
+      loops: [],
+      nonTLoops: [],
+      deltas: [],
+      TF: 0,
     }
   },
   components: {
@@ -89,7 +125,8 @@ export default {
       this.configKonva.height = parentRect.offsetHeight;
       this.configKonva.width = parentRect.offsetWidth;
     }
-    
+    // this.fPaths = [[1,2,3,4,5],[1,5,4,7,9,1,3,4],[4,4,5,6,2,3,4,5],[1,2,3,4,5],[1,5,4,7,9,1,3,4],[4,4,5,6,2,3,4,5],[1,2,3,4,5],[1,5,4,7,9,1,3,4],[4,4,5,6,2,3,4,5],[1,2,3,4,5],[1,5,4,7,9,1,3,4],[4,4,5,6,2,3,4,5],[1,2,3,4,5],[1,5,4,7,9,1,3,4],[4,4,5,6,2,3,4,5],[1,2,3,4,5],[1,5,4,7,9,1,3,4],[4,4,5,6,2,3,4,5],[1,2,3,4,5],[1,5,4,7,9,1,3,4],[4,4,5,6,2,3,4,5],[1,2,3,4,5],[1,5,4,7,9,1,3,4],[4,4,5,6,2,3,4,5]];
+    // this.loops = [[1,2,3,4,5],[1,5,4,7,9,1,3,4],[4,4,5,6,2,3,4,5]];
   },
   methods: {
     start(){
@@ -108,6 +145,26 @@ export default {
         graph[x][y] = this.arrows[i].gain;
       }
       console.log(graph);
+      // console.log(JSON.stringify(graph));
+      fetch('http://localhost:8080/solver',{
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        // body: JSON.stringify({graph: graph})
+        body: JSON.stringify(graph)
+      }).then(response =>{ 
+        console.log(response)
+        return response.json();
+      }).then(data => {
+        this.fPaths = data.forwardPaths;
+        this.loops = data.loopsInGraph;
+        this.nonTLoops = data.NonTouchingLoops;
+        this.deltas = data.deltas;
+        this.TF = data.transferFunction;
+        console.log(data);
+      });
+      document.querySelector(".output").style.visibility = 'visible';
     },
     updateQueue(e){
       // console.log(e.target.id())
@@ -365,13 +422,8 @@ export default {
         }
       }
     },
-    closeGain(op){
-      console.log("HI")
-      if(op == 'cancel'){
-        this.curGain = 0;
-      }
-      document.querySelector(".gain").style.visibility = "hidden";
-      this.busy = false;
+    closeOutput(){
+      document.querySelector(".output").style.visibility = 'hidden'
     }
   }
 }
@@ -514,5 +566,72 @@ li img{
   font-size: 20px;
   font-family: calibri;
   text-align: center;
+}
+.output{
+  display: flex;
+  flex-direction: column;
+  background: lightblue;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 70%;
+  overflow: hidden;
+  z-index: 1000;
+  padding-top: 20px;
+  visibility: hidden;
+}
+.output header{
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: rgb(208, 237, 247);
+  cursor: pointer;
+  color: blue;
+  font-weight: bold;
+  z-index: 10001;
+}
+.output header:hover{
+  color: red;
+}
+
+.output .container{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow: scroll;
+  height: 100% ;
+}
+.output .container ul{
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  padding-bottom:20px ;
+  border-bottom: 2px solid black;
+  
+}
+.output .container ul p{
+  font-size: 25px;
+  font-weight: bold;
+  margin: 10px;
+}
+::-webkit-scrollbar {
+  width: 10px; /* width of the scrollbar */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: lightblue; /* color of the track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(102, 181, 255); /* color of the scrollbar handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: grey; /* color of the scrollbar handle on hover */
 }
 </style>
