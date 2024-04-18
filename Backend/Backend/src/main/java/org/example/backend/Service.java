@@ -13,6 +13,9 @@ public class Service {
     double delta;
     double transferFunction;
 
+    public Service(List<List<Integer>> forwardPaths, List<Integer> gainOfForwardPaths, List<SingleLoop> loopsInGraph, double delta, ArrayList<Double> deltas) {
+    }
+
     public double getTransferFunction() {
         return transferFunction;
     }
@@ -69,7 +72,8 @@ public class Service {
         this.deltas = deltas;
     }
 
-
+    public Service() {
+    }
 
     public Service(List<List<Integer>> forwardPaths, List<Integer> gainOfForwardPaths, List<List<Integer>> loopsInGraph, double delta, ArrayList<Double> deltas, List<Set<Integer>> nonTouchingLoops) {
         this.forwardPaths = forwardPaths;
@@ -78,5 +82,26 @@ public class Service {
         this.delta = delta;
         this.deltas = deltas;
         this.NonTouchingLoops = nonTouchingLoops;
+    }
+    public double computeTF(){
+        transferFunction = 0;
+        for (int i = 0; i < forwardPaths.size(); i++){
+            transferFunction += (gainOfForwardPaths.get(i) * deltas.get(i));
+        }
+        transferFunction = transferFunction/delta;
+        return transferFunction;
+    }
+
+    @Override
+    public String toString() {
+        return "Service{" +
+                "forwardPaths=" + forwardPaths.toString() +
+                ", gainOfForwardPaths=" + gainOfForwardPaths.toString() +
+                ", loopsInGraph=" + loopsInGraph.toString() +
+                ", NonTouchingLoops=" + NonTouchingLoops.toString() +
+                ", deltas=" + deltas.toString() +
+                ", delta=" + delta +
+                ", transferFunction=" + transferFunction +
+                '}';
     }
 }

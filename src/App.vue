@@ -21,7 +21,10 @@
         <ul>
           <p>Non Touching Loops</p>
           <li v-for="path in nonTLoops" :key="path">
-            • {{ path }}
+            <div v-for="index in path" :key="index">
+              • {{ loops[index] }}
+            </div>
+            <hr>
           </li>
         </ul>
         <ul>
@@ -159,7 +162,7 @@ export default {
       }).then(data => {
         this.fPaths = data.forwardPaths;
         this.loops = data.loopsInGraph;
-        this.nonTLoops = data.NonTouchingLoops;
+        this.nonTLoops = data.nonTouchingLoops;
         this.deltas = data.deltas;
         this.TF = data.transferFunction;
         console.log(data);

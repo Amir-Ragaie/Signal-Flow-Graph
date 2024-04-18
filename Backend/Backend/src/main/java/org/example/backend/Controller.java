@@ -10,7 +10,7 @@ import java.util.List;
 @RequestMapping("/")
 @CrossOrigin(origins = "*")
 public class Controller {
-//    @Autowired
+    //    @Autowired
     @PostMapping("/solver")
     public Service solvingSFG(@RequestBody String str){
         System.out.println(str);
@@ -59,6 +59,7 @@ public class Controller {
             loopsInGraph.add(l.getLoopPath());
         }
         Service service = new Service(paths.getForwardPaths(),paths.getGainOfForwardPaths(),loopsInGraph, deltas.getDelta(),deltas.getDeltas(), loops.getNonTouchingLoops());
+        service.computeTF();
         return service;
     }
 }
