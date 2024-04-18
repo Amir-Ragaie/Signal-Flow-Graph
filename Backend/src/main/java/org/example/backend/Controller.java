@@ -12,7 +12,7 @@ import java.util.List;
 public class Controller {
 //    @Autowired
     @PostMapping("/solver")
-    public String solvingSFG(@RequestBody String str){
+    public Service solvingSFG(@RequestBody String str){
         System.out.println(str);
         str = str.substring(1, str.length() - 1);
         String[] subarrays = str.split("\\],\\[");
@@ -47,13 +47,19 @@ public class Controller {
             }
             System.out.println();
         }
-        Service service = new Service(graph);
-        String result = "The forward paths are: " + service.paths.getForwardPaths().toString() + "\n" +
-                "The loops are: " + service.loops.getLoopsInGraph().toString() + "\n" +
-                "The 2 Non-touching loops are "+ service.loops.getNonTouchingLoops().toString()+"\n"+
-                "The delta is: " + Double.toString(service.deltas.getDelta()) + "\n" +
-                "The deltas are: " + service.deltas.getDeltas().toString();
-        System.out.println(result);
-        return result;
+        Paths paths = new Paths();
+        paths.findForwardPaths(graph);
+        paths.findGainOfForwardPaths(graph,paths.getForwardPaths());
+        Loops loops = new Loops(graph);
+        Deltas deltas = new Deltas(loops,paths.getForwardPaths(),graph);
+        Service service = new Service(paths.getForwardPaths(),paths.getGainOfForwardPaths(),loops.getLoopsInGraph(), deltas.getDelta(),deltas.getDeltas());
+//        Service service = new Service(graph);
+//        String result = "The forward paths are: " + service.paths.getForwardPaths().toString() + "\n" +
+//                "The loops are: " + service.loops.getLoopsInGraph().toString() + "\n" +
+//                "The 2 Non-touching loops are "+ service.loops.getNonTouchingLoops().toString()+"\n"+
+//                "The delta is: " + Double.toString(service.deltas.getDelta()) + "\n" +
+//                "The deltas are: " + service.deltas.getDeltas().toString();
+//        System.out.println(result);
+        return service;
     }
 }
