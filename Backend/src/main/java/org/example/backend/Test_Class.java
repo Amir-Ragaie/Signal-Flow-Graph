@@ -68,7 +68,7 @@ public class Test_Class {
         System.out.println(deltas.getDelta());
         System.out.println(deltas.getDeltas());
 
-        double[][] graphMatrix = {
+        double[][] graphMatrix1 = {
 //                {0, -10, 5, 0, 0},
 //                {0, 0, 1, 25, 0},
 //                {0, 0, 0, 6, 1},
@@ -80,22 +80,22 @@ public class Test_Class {
                 {0, 0,3.7, 0, 5.3},
                 {-3.5, 0, 0, 0, 0}
         };
-//        Paths paths = new Paths();
-//        paths.findForwardPaths(graphMatrix);
-//        paths.findGainOfForwardPaths(graphMatrix, paths.getForwardPaths());
-//        System.out.println("Forward paths from first node to last node:");
-//        for (List<Integer> path : paths.getForwardPaths()) {
-//            System.out.println(path);
-//            System.out.println("Gain: " + paths.getGainOfForwardPaths().get(paths.getForwardPaths().indexOf(path)));
-//        }
+        double[][] graphMatrix2 = {
+                {0, 10, 5, 0, 0},
+                {0, 0, 1, 25, 0},
+                {0, 0, 0, 6, 1},
+                {0, 0, 0, 0, 20},
+                {0, 0, 0, 0, 0}
+        };
+        Paths paths = new Paths();
+        paths.findForwardPaths(graphMatrix2);
+        paths.findGainOfForwardPaths(graphMatrix2, paths.getForwardPaths());
+        System.out.println("Forward paths from first node to last node:");
+        for (List<Integer> path : paths.getForwardPaths()) {
+            System.out.println(path);
+            System.out.println("Gain: " + paths.getGainOfForwardPaths().get(paths.getForwardPaths().indexOf(path)));
+        }
 
-//        List<List<Integer>> forwardPaths = testPaths.findForwardPaths(adjacencyMatrix);
-//        List<Integer> gainOfForwardPaths = testPaths.findGainOfForwardPaths(adjacencyMatrix, forwardPaths);
-//            System.out.println("Forward paths from first node to last node:");
-//            for (List<Integer> path : forwardPaths) {
-//                System.out.println(path);
-//                System.out.println("Gain: " + gainOfForwardPaths.get(forwardPaths.indexOf(path)));
-//            }
 
 
         }

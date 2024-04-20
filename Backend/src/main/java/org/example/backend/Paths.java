@@ -54,20 +54,4 @@ public class Paths {
         this.findGainOfForwardPaths(graph,this.getForwardPaths());
     }
 
-//    public static void main(String[] args) {
-//        int[][] graphMatrix = {
-//                {0, 10, 5, 0, 0},
-//                {0, 0, 1, 25, 0},
-//                {0, 0, 0, 6, 1},
-//                {0, 0, 0, 0, 20},
-//                {0, 0, 0, 0, 0}
-//        };
-//        forwardPaths = findForwardPaths(graphMatrix);
-//        gainOfForwardPaths = findGainOfForwardPaths(graphMatrix, forwardPaths);
-//        System.out.println("Forward paths from first node to last node:");
-//        for (List<Integer> path : forwardPaths) {
-//            System.out.println(path);
-//            System.out.println("Gain: " + gainOfForwardPaths.get(forwardPaths.indexOf(path)));
-//        }
-//    }
 }
