@@ -94,7 +94,7 @@ This part file provides detailed information about the Routh Criterion program, 
 
 # Contributors
 
-This project is a collaborative effort by the talented students of CSED26. The team members who contributed to the development and success of this project are
+This project is a collaborative effort by the talented students of CSED26. The team members who contributed to the development and success of this project are:
 
 - [Rowan Gamal](https://github.com/rowanxgamal)
 - [Karene Antoine](https://github.com/Karene-Antoine)
