@@ -61,9 +61,11 @@ One of the key features is the ability to calculate the transfer function of the
 
 ## Examples
 
-![1.png](Untitled%2060fa20ec05574ccd9d088a9f059e1023/1.png)
+<img width="440" alt="1" src="https://github.com/MostafaElKaranshawy/Signal-Flow-Graph/assets/162327055/24299a23-9e50-4b7e-8a43-5dc94b21946d">
 
-![2.png](Untitled%2060fa20ec05574ccd9d088a9f059e1023/2.png)
+
+<img width="449" alt="2" src="https://github.com/MostafaElKaranshawy/Signal-Flow-Graph/assets/162327055/e6eb6203-41f6-470d-964b-10450be15bce">
+
 
 # Routh Criterion Program
 
@@ -87,9 +89,10 @@ This part file provides detailed information about the Routh Criterion program, 
 
 ## Examples
 
-![3.png](Untitled%2060fa20ec05574ccd9d088a9f059e1023/16c6b1b6-12ff-482b-b2a2-c0fd916667f6.png)
+![3](https://github.com/MostafaElKaranshawy/Signal-Flow-Graph/assets/162327055/54bedce6-9a8b-4232-9b50-df3fb7a750c0)
 
-![4.png](Untitled%2060fa20ec05574ccd9d088a9f059e1023/4.png)
+<img width="322" alt="4" src="https://github.com/MostafaElKaranshawy/Signal-Flow-Graph/assets/162327055/c038b9cc-2791-4c37-8269-e5e2b082e2f6">
+
 
 # Contributors
 
