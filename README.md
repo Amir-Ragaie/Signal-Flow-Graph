@@ -6,13 +6,13 @@ Welcome to the Signal Flow Graph repository! This project is designed to facilit
 
 ## Table of Contents
 
-- [Introduction](notion://www.notion.so/60fa20ec05574ccd9d088a9f059e1023?showMoveTo=true&saveParent=true#introduction) 🌐
-- [Features](notion://www.notion.so/60fa20ec05574ccd9d088a9f059e1023?showMoveTo=true&saveParent=true#features) ✨
-- [Installation](notion://www.notion.so/60fa20ec05574ccd9d088a9f059e1023?showMoveTo=true&saveParent=true#installation) 🛠️
-- [User Guide](notion://www.notion.so/60fa20ec05574ccd9d088a9f059e1023?showMoveTo=true&saveParent=true#user-guide) 📚
-- [Examples](notion://www.notion.so/60fa20ec05574ccd9d088a9f059e1023?showMoveTo=true&saveParent=true#examples) 🌟
-- [Routh Criterion Program](notion://www.notion.so/60fa20ec05574ccd9d088a9f059e1023?showMoveTo=true&saveParent=true#routh-criterion-program) 📈
-- [Contributors](notion://www.notion.so/60fa20ec05574ccd9d088a9f059e1023?showMoveTo=true&saveParent=true#contributors) 👩‍💻👨‍💻
+-   [Introduction](#introduction) 🌐
+-   [Features](#features) ✨
+-   [Installation](#installation) 🛠️
+-   [User_Guide](#user-guide) 📚
+-   [Examples](#examples) 🌟
+-   [Routh Criterion Program](#routh-criterion-program) 📈
+-   [Contributors](#contributors) 👩‍💻👨‍💻
 
 ## Introduction
 
