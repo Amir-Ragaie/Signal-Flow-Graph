@@ -89,8 +89,7 @@ This part file provides detailed information about the Routh Criterion program, 
 
 ## Examples
 
-![3](https://github.com/MostafaElKaranshawy/Signal-Flow-Graph/assets/162327055/54bedce6-9a8b-4232-9b50-df3fb7a750c0)
-
+<img width="322" alt="4" src="https://github.com/MostafaElKaranshawy/Signal-Flow-Graph/assets/162327055/54bedce6-9a8b-4232-9b50-df3fb7a750c0">
 <img width="322" alt="4" src="https://github.com/MostafaElKaranshawy/Signal-Flow-Graph/assets/162327055/c038b9cc-2791-4c37-8269-e5e2b082e2f6">
 
 
