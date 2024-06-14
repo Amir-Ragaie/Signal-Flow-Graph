@@ -9,7 +9,7 @@ Welcome to the Signal Flow Graph repository! This project is designed to facilit
 - [Introduction](notion://www.notion.so/60fa20ec05574ccd9d088a9f059e1023?showMoveTo=true&saveParent=true#introduction) 🌐
 - [Features](notion://www.notion.so/60fa20ec05574ccd9d088a9f059e1023?showMoveTo=true&saveParent=true#features) ✨
 - [Installation](notion://www.notion.so/60fa20ec05574ccd9d088a9f059e1023?showMoveTo=true&saveParent=true#installation) 🛠️
-- [User_Guide](notion://www.notion.so/60fa20ec05574ccd9d088a9f059e1023?showMoveTo=true&saveParent=true#user-guide) 📚
+- [User Guide](notion://www.notion.so/60fa20ec05574ccd9d088a9f059e1023?showMoveTo=true&saveParent=true#user-guide) 📚
 - [Examples](notion://www.notion.so/60fa20ec05574ccd9d088a9f059e1023?showMoveTo=true&saveParent=true#examples) 🌟
 - [Routh Criterion Program](notion://www.notion.so/60fa20ec05574ccd9d088a9f059e1023?showMoveTo=true&saveParent=true#routh-criterion-program) 📈
 - [Contributors](notion://www.notion.so/60fa20ec05574ccd9d088a9f059e1023?showMoveTo=true&saveParent=true#contributors) 👩‍💻👨‍💻
@@ -61,9 +61,9 @@ One of the key features is the ability to calculate the transfer function of the
 
 ## Examples
 
-[https://github.com/MostafaElKaranshawy/Signal-Flow-Graph/assets/162327055/0336c8ed-b9fe-4a41-a1e3-e4c95e061432](https://github.com/MostafaElKaranshawy/Signal-Flow-Graph/assets/162327055/0336c8ed-b9fe-4a41-a1e3-e4c95e061432)
+![1.png](Untitled%2060fa20ec05574ccd9d088a9f059e1023/1.png)
 
-[https://github.com/MostafaElKaranshawy/Signal-Flow-Graph/assets/162327055/2f63da66-4467-41ad-b927-aeb623c8ce03](https://github.com/MostafaElKaranshawy/Signal-Flow-Graph/assets/162327055/2f63da66-4467-41ad-b927-aeb623c8ce03)
+![2.png](Untitled%2060fa20ec05574ccd9d088a9f059e1023/2.png)
 
 # Routh Criterion Program
 
@@ -87,9 +87,9 @@ This part file provides detailed information about the Routh Criterion program, 
 
 ## Examples
 
-[https://github.com/MostafaElKaranshawy/Signal-Flow-Graph/assets/162327055/f04564dd-effe-4e37-aab2-bebc1548f694](https://github.com/MostafaElKaranshawy/Signal-Flow-Graph/assets/162327055/f04564dd-effe-4e37-aab2-bebc1548f694)
+![3.png](Untitled%2060fa20ec05574ccd9d088a9f059e1023/16c6b1b6-12ff-482b-b2a2-c0fd916667f6.png)
 
-[https://github.com/MostafaElKaranshawy/Signal-Flow-Graph/assets/162327055/7c423309-21d8-4b25-8706-3e86fe6099e6](https://github.com/MostafaElKaranshawy/Signal-Flow-Graph/assets/162327055/7c423309-21d8-4b25-8706-3e86fe6099e6)
+![4.png](Untitled%2060fa20ec05574ccd9d088a9f059e1023/4.png)
 
 # Contributors
 
