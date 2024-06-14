@@ -1,5 +1,3 @@
-# Untitled
-
 # Signal Flow Graph 📊
 
 Welcome to the Signal Flow Graph repository! This project is designed to facilitate the implementation and analysis of signal flow graphs, which are essential tools in systems theory and control engineering for representing the flow of signals within a system. This repository contains comprehensive documentation, examples, and tools to help you understand and work with signal flow graphs effectively.
