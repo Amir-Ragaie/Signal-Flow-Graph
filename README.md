@@ -61,10 +61,10 @@ One of the key features is the ability to calculate the transfer function of the
 
 ## Examples
 
-<img width="450" alt="1" src="https://github.com/MostafaElKaranshawy/Signal-Flow-Graph/assets/162327055/24299a23-9e50-4b7e-8a43-5dc94b21946d">
+<img height="200" width="450" alt="1" src="https://github.com/MostafaElKaranshawy/Signal-Flow-Graph/assets/162327055/24299a23-9e50-4b7e-8a43-5dc94b21946d">
 
 
-<img width="450" alt="2" src="https://github.com/MostafaElKaranshawy/Signal-Flow-Graph/assets/162327055/e6eb6203-41f6-470d-964b-10450be15bce">
+<img height="200" width="450" alt="2" src="https://github.com/MostafaElKaranshawy/Signal-Flow-Graph/assets/162327055/e6eb6203-41f6-470d-964b-10450be15bce">
 
 
 # Routh Criterion Program
