@@ -101,5 +101,4 @@ This project is a collaborative effort by the talented students of CSED26. The t
 - [Moustafa ElKaranshawy](https://github.com/MostafaElKaranshawy)
 - [Amir Ragaie](https://github.com/Amir-Ragaie)
 - [Youssef Mahmoud](https://github.com/Youssef-Mahmoud0)
-- [Youmna Yasser]
-(https://github.com/yomnay888)
+- [Youmna Yasser](https://github.com/yomnay888)
